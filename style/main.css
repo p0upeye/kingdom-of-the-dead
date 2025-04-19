@@ -1,0 +1,467 @@
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #111;
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Додаємо обмеження ширини для контенту */
+main {
+flex: 1;
+padding: 2rem;
+max-width: 800px;
+margin: 0 auto;
+width: 100%;
+box-sizing: border-box;
+}
+
+header.hero {
+background-image: url('../assets/images/pixelart-bg.png');
+background-size: cover;
+background-position: center;
+height: 250px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0; /* Щоб не стискався у флекс-контейнері */
+}
+
+nav {
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  border-bottom: 3px solid #333;
+}
+
+nav a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+}
+
+nav a:hover {
+  color: #00c3ff;
+}
+
+nav a.active::after {
+content: "";
+position: absolute;
+bottom: -3px;
+left: 5%;
+width: 90%;
+height: 2px;
+background-color: #00c3ff;
+border-bottom: 2px solid #75dfff;
+border-radius: 25px;
+}
+
+nav a.bug-link:hover {
+  color: #ffd062;
+}
+
+nav a.active.bug-link::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 5%;
+  width: 90%;
+  height: 2px;
+  background-color: #ffd062;
+  border-bottom: 2px solid #ffe6ad;
+  border-radius: 25px;
+  }
+
+
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #000;
+  color: #aaa;
+  margin-top: auto; /* Замість фіксованого відступу */
+}
+
+.news-list {
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+
+.news-list li {
+background-color: #222;
+border-radius: 5px;
+margin-bottom: 2.5rem;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+overflow: hidden;
+box-sizing: border-box;
+}
+
+.news-list li h3 {
+background-color: rgba(0, 0, 0, 0.2);
+color: #fff;
+padding: 1rem 1.5rem;
+font-size: 1.3rem;
+margin: 0;
+border-radius: 5px 5px 0 0;
+width: 100%;
+word-wrap: break-word;
+white-space: normal;
+box-sizing: border-box;
+}
+
+.news-list li p,
+.news-list li .news-date {
+padding: 1rem 1.5rem;
+}
+
+.news-list li p {
+color: #ddd;
+font-size: 1rem;
+margin: 0;
+line-height: 1.6;
+}
+
+.news-list li .news-date {
+color: #aaa;
+font-size: 0.9rem;
+display: block;
+text-align: right;
+}
+
+#about h2,
+#screenshots h2,
+#video h2,
+#news h2,
+#download h2,
+#bugs h2 {
+    font-size: 1.50rem;
+    color: #f0f0f0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    
+    background: rgba(255, 255, 255, 0.05); /* Прозорий білий */
+    backdrop-filter: blur(4px);           /* Ефект скла */
+    -webkit-backdrop-filter: blur(4px);   /* Safari підтримка */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+nav a[href="download.html"] {
+  background: linear-gradient(270deg, #00c3ff, #0072ff, #00ffe5, #00c3ff);
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s ease infinite;
+  font-weight: bold;
+  position: relative;
+}
+
+nav a[href="download.html"].active::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 5%;
+  width: 90%;
+  height: 2px;
+  background: linear-gradient(270deg, #00c3ff, #0072ff, #00ffe5, #00c3ff);
+  background-size: 800% 800%;
+  animation: gradientShift 6s ease infinite;
+  border-radius: 25px;
+}
+
+@keyframes gradientShift {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+
+nav a[href="download.html"]:active, a[href="news.html"]:active, a[href="index.html"]:active {
+transform: scale(0.95);
+text-shadow: 0 0 10px #00c3ff, 0 0 20px #6f00ff;
+}
+
+nav a[href="report.html"]:active {
+  transform: scale(0.95);
+  text-shadow: 0 0 10px #ffd062, 0 0 20px #a65800;
+  }
+
+.report-container, .download-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.download-button {
+  display: inline-block;
+  padding: 20px 40px;
+  background: linear-gradient(270deg, #00c3ff, #0072ff, #004eff, #00c3ff);
+  background-size: 600% 600%;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 25px;
+  text-transform: uppercase;
+  font-size: 20px;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: gradientShift 8s ease infinite;
+  user-select: none;
+}
+
+.report-button {
+  display: inline-block;
+  padding: 20px 40px;
+  background: linear-gradient(270deg, #ffd062, #de9325, #a65800, #eab648);
+  background-size: 600% 600%;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 25px;
+  text-transform: uppercase;
+  font-size: 20px;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: gradientShift 8s ease infinite;
+  user-select: none;
+}
+
+.report-button:hover, .download-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.report-button:active, .download-button:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.windows-text {
+font-size: 14px;
+font-weight: 300;
+color: #aaaaaa;
+margin-top: 10px;
+text-align: center;
+text-transform: none;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: rgba(255, 255, 255, 0.05); /* Дуже легкий білий */
+  color: #ccc;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: none;
+  backdrop-filter: blur(4px); /* Трохи розмиття фону */
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+#backToTop:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Фінальна стилізація для каруселі скріншотів */
+.screenshot-carousel {
+  position: relative;
+  width: 100%;
+  margin: 2rem auto 4rem; /* Збільшено нижній відступ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  box-sizing: border-box;
+}
+
+.carousel-container {
+  width: 80%; /* Зменшено ширину для залишення місця для бокових слайдів */
+  height: 400px;
+  overflow: visible; /* Змінено з hidden, щоб видно було бокові слайди */
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  perspective: 1000px;
+}
+
+/* Створюємо додатковий контейнер для ефекту обрізаних бокових слайдів */
+.carousel-inner {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transform-style: preserve-3d;
+  overflow: visible; /* Важливо для видимості бокових слайдів */
+}
+
+.carousel-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  backface-visibility: hidden;
+  transition: all 0.5s ease;
+  transform-origin: center;
+  /* Видалені стилі opacity і filter, оскільки вони будуть застосовані в JS */
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  filter: blur(0) brightness(1);
+  border-color: #333; /* Прибрано синє підсвічування */
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  transform: scale(1.05);
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  border-radius: 8px; /* Змінено на квадратнішу форму як back-to-top */
+  background: rgba(255, 255, 255, 0.05); /* Стиль як у back-to-top */
+  color: #ccc;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+  z-index: 20;
+}
+
+.carousel-arrow:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.carousel-prev {
+  left: -50px; /* Винесено за межі контейнера */
+}
+
+.carousel-next {
+  right: -50px; /* Винесено за межі контейнера */
+}
+
+/* Зменшуємо відстань між слайдами і крапками */
+.carousel-indicators {
+  position: absolute;
+  bottom: -25px; /* Зменшено відстань з -40px */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 8px; /* Як у back-to-top */
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Прибрано анімацію пульсації */
+
+/* Медіа-запити для адаптивності */
+@media (max-width: 1000px) {
+  .carousel-container {
+    width: 85%;
+    height: 350px;
+  }
+  
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Повертаємо кнопки в межі на малих екранах */
+  .carousel-prev {
+    left: 10px;
+  }
+  
+  .carousel-next {
+    right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    width: 90%;
+    height: 280px;
+  }
+  
+  .carousel-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+  
+  .carousel-indicators {
+    gap: 8px;
+  }
+  
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
+  }
+}

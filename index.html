@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kingdom of the Dead > Home</title>
+  <link rel="stylesheet" href="style/main.css" />
+  <link rel="icon" href="assets/images/favicon.ico" />
+</head>
+<body>
+  <header class="hero">
+  </header>
+
+  <nav class="navbar">
+    <a href="index.html" class="active">Home</a>
+    <a href="news.html">News</a>
+    <a href="download.html">Download</a>
+    <a href="report.html"  class="bug-link">Bug reports</a>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2>About game</h2>
+      <p>
+        – Kingdom of the Dead is an immersive game inspired by the atmosphere 
+        of ancient castles, their former glory, and their current haunting decay. 
+        Fight for survival, uncover mysteries, and discover new opportunities.<br><br>
+        * The game is in early access. You can report bugs and issues on the 
+        Bug Reports page — this helps us fix them faster. Thank you for your support!
+      </p>
+    </section>
+
+    <!-- HTML структура для фінальної каруселі -->
+    <section id="screenshots">
+      <h2>Screenshot gallery</h2>
+      <div class="screenshot-carousel">
+        <button class="carousel-arrow carousel-prev" aria-label="Попередній скріншот">&#10094;</button>
+        
+        <div class="carousel-container">
+          <div class="carousel-inner">
+            <img src="assets/images/Screenshot_1.png" alt="Screenshot 1" class="carousel-slide">
+            <img src="assets/images/Screenshot_2.png" alt="Screenshot 2" class="carousel-slide">
+            <img src="assets/images/Screenshot_3.png" alt="Screenshot 3" class="carousel-slide">
+            <img src="assets/images/Screenshot_4.png" alt="Screenshot 4" class="carousel-slide">
+            <img src="assets/images/Screenshot_5.png" alt="Screenshot 5" class="carousel-slide">
+          </div>
+        </div>
+        
+        <button class="carousel-arrow carousel-next" aria-label="Наступний скріншот">&#10095;</button>
+        
+        <div class="carousel-indicators"></div>
+      </div>
+    </section>
+    
+    <section id="video">
+      <h2>Watch the video</h2>
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/l27-BH1sNrQ?si=bZhsRUVKkKWFx0S2" 
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Kingdom of the Dead. Created with ❤️</p>
+  </footer>
+
+  <button id="backToTop">↩</button>
+  <script src="script/main.js"></script>
+</body>
+</html>
