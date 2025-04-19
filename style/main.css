@@ -83,8 +83,6 @@ nav a.active.bug-link::after {
   border-radius: 25px;
   }
 
-
-
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -320,7 +318,7 @@ text-transform: none;
 .carousel-container {
   width: 80%; /* Зменшено ширину для залишення місця для бокових слайдів */
   height: 400px;
-  overflow: visible; /* Змінено з hidden, щоб видно було бокові слайди */
+  overflow: hidden; /* visible Змінено з hidden, щоб видно було бокові слайди */
   position: relative;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
