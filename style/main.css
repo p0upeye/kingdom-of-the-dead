@@ -1,6 +1,4 @@
 html, body {
-  overflow-x: hidden; /* Заборонити горизонтальний скролінг */
-  position: relative; /* Для коректної роботи overflow-x */
   height: 100%;
   font-family: Arial, sans-serif;
   margin: 0;
@@ -465,73 +463,5 @@ text-transform: none;
   .carousel-dot {
     width: 8px;
     height: 8px;
-  }
-}
-
-/* CSS для бургер-меню */
-.burger-menu {
-  display: none;
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  z-index: 1100;
-}
-
-.burger-icon {
-  cursor: pointer;
-  background: rgba(34, 34, 34, 0.8);
-  color: #f0f0f0;
-  padding: 8px 12px;
-  border-radius: 5px;
-  font-size: 24px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(5px);
-}
-
-@media (max-width: 767px) {
-  nav {
-    position: fixed;
-    top: 0;
-    left: -100%; /* Початково приховане меню */
-    width: 70%;
-    height: 100%;
-    flex-direction: column;
-    background-color: rgba(17, 17, 17, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 60px 20px;
-    transition: left 0.3s ease;
-    z-index: 1000;
-    justify-content: flex-start;
-    gap: 2rem;
-  }
-  
-  nav.active {
-    left: 0; /* Показати меню */
-  }
-  
-  .burger-menu {
-    display: block;
-  }
-  
-  nav a {
-    font-size: 18px;
-    padding: 10px 15px;
-    width: 100%;
-    text-align: left;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  nav a.active::after {
-    display: none; /* Прибираємо підкреслення */
-  }
-  
-  nav a.active {
-    background-color: rgba(0, 195, 255, 0.1); /* Інший спосіб позначення активного елемента */
-    border-left: 3px solid #00c3ff;
-  }
-  
-  nav a.bug-link.active {
-    background-color: rgba(255, 208, 98, 0.1);
-    border-left: 3px solid #ffd062;
   }
 }
