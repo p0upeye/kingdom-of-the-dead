@@ -423,7 +423,7 @@ text-transform: none;
 /* Прибрано анімацію пульсації */
 
 /* Медіа-запити для адаптивності */
-@media (max-width: 1000px) {
+@media (max-width: 767px) {
   .carousel-container {
     width: 85%;
     height: 350px;
