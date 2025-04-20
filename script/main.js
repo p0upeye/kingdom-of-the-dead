@@ -213,4 +213,56 @@ function updateSlidePositions() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
+
+  // Додаємо функціонал для бургер-меню
+  const burgerIcon = document.querySelector('.burger-icon');
+  const nav = document.querySelector('nav');
+  const overlay = document.createElement('div');
+  overlay.className = 'menu-overlay';
+  document.body.appendChild(overlay);
+  
+  // Стилі для оверлею
+  const style = document.createElement('style');
+  style.textContent = `
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 999;
+      display: none;
+    }
+    .menu-overlay.active {
+      display: block;
+    }
+  `;
+  document.head.appendChild(style);
+  
+  // Перемикання меню
+  burgerIcon.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    overlay.classList.toggle('active');
+    document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+  });
+  
+  // Закрити меню при кліку на оверлей
+  overlay.addEventListener('click', () => {
+    nav.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+  
+  // Закрити меню при кліку на посилання
+  const navLinks = nav.querySelectorAll('a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 767) {
+        nav.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  });
 });
