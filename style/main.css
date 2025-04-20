@@ -423,7 +423,7 @@ text-transform: none;
 /* Прибрано анімацію пульсації */
 
 /* Медіа-запити для адаптивності */
-@media (max-width: 2000px) {
+@media (max-width: 1000px) {
   .carousel-container {
     width: 85%;
     height: 350px;
@@ -463,5 +463,22 @@ text-transform: none;
   .carousel-dot {
     width: 8px;
     height: 8px;
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel-container {
+    overflow: hidden;
+  }
+  
+  .carousel-inner {
+    perspective: none;
+    transform-style: flat;
+  }
+  
+  .carousel-slide {
+    backface-visibility: visible;
+    transform-origin: center;
+    transition: transform 0.4s ease;
   }
 }
